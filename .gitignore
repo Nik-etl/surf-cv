@@ -1,3 +1,5 @@
 **/.env
 .secrets
-
+.venv/
+data/
+TODO.md
