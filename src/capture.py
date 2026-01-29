@@ -1,6 +1,17 @@
 import cv2 as cv
 import os
 from dotenv import load_dotenv
+from datetime import datetime
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+SAVE_DIR = os.path.join(SCRIPT_DIR, "..", "data", "frames" )
+
+os.makedirs(SAVE_DIR, exist_ok=True)
+
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+filename = f"frame_{timestamp}.jpg"
+SAVE_PATH = os.path.join(SAVE_DIR, filename)
 
 load_dotenv()
 
@@ -26,8 +37,9 @@ print(f"Frame captured: {frame.shape}") #Shows dimensions
 
 # save frame
 #TODO turn this into relative file path 
-cv.imwrite("../data/frames/capturedframe.jpg", frame)
-print("Frame saved as captured_frame.jpg")
+cv.imwrite(SAVE_PATH, frame)
+print(f"Frame saved: {filename}")
+print(f"Frame saved to {SAVE_PATH}")
 
 # Cleanup
 cap.release()
