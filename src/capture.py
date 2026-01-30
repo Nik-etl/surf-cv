@@ -25,7 +25,9 @@ print("Connected to stream")
 
 frames = 0 
 
-while frames < 5:
+# BEFORE COLLECTING FRAMES MAKE SURE STREAM WORKS FULLY WITH CHANGING VIDEOS
+
+while frames < 100:
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"frame_{timestamp}.jpg"
@@ -43,7 +45,7 @@ while frames < 5:
     cv.imwrite(SAVE_PATH, frame)
     print(f"Frame saved: {filename}")
     print(f"Frame saved to {SAVE_PATH}")
-    time.sleep(10)
+    time.sleep(300)
     frames += 1
 
 # Cleanup
