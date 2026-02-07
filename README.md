@@ -4,16 +4,18 @@ Coastal monitoring system using computer vision to analyze surf conditions from 
 
 ## Project Goals
 - Capture frames from live surf cam streams
-- Detect and classify wave conditions
-- Count surfers (planned)
+- Count surfers/ people in water
+- Classify water conditions (planned)
 - Store historical data for trend analysis (planned)
 
 ## Status
-Work in progress - frame capture pipeline functional.
+Work in progress - frame capture pipeline functional. Detects persons in frame using YOLOv8s. 
+*Currently fine tuning model*
 
 ## Tech Stack
 - Python
 - OpenCV
+- ultralytics yolov8
 - Raspberry Pi 5 (deployment target)
 
 ## Setup
